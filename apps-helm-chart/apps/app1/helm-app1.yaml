@@ -1,19 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-app4
+  name: helm-app1
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app4
+    namespace: helm-app1
     server: {{ .Values.spec.destination.server }}
   project: default
-  source:
-    path: sync-waves
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+  sources:
+    - chart: helm-chart
+      repoURL: 'https://vikaslall.github.io/helm-chart/'
+      targetRevision: 0.1.1
+      helm:
+        valueFiles:
+          - $values/values.yaml
+    - repoURL: 'https://github.com/VikasLall/argocdappofapps.git'
   syncPolicy:
     automated:
       allowEmpty: true
