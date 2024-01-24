@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Dev Project
   sourceRepos:
-  - '*'
+  - 'git@github.com:VikasLall/argocdappofapps.git/apps-helm-chart/dev/app1/*'
 
   destinations:
   - namespace: ns-1
