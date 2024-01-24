@@ -9,7 +9,6 @@ spec:
   - 'git@github.com:VikasLall/argocdappofapps.git/apps-helm-chart/dev/app1/*'
   - 'https://vikaslall.github.io/helm-chart/'
   - 'git@github.com:VikasLall/argocdappofapps.git/'
-  path: apps-helm-chart/dev/app1
   destinations:
   - namespace: ns-1
     server: https://kubernetes.default.svc
