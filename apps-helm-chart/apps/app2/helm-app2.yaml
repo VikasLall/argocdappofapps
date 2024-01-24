@@ -10,10 +10,16 @@ spec:
     namespace: helm-app2
     server: {{ .Values.spec.destination.server }}
   project: default
-  source:
-    path: helm-hooks
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+  sources:
+    - chart: helm-chart
+      repoURL: 'https://vikaslall.github.io/helm-chart/'
+      targetRevision: 0.1.1
+      helm:
+        valueFiles:
+          - $values/apps-helm-chart/apps/app2/values.yaml
+    - repoURL: 'https://github.com/VikasLall/argocdappofapps.git'
+      targetRevision: main
+      ref: values
   syncPolicy:
     automated:
       allowEmpty: true
