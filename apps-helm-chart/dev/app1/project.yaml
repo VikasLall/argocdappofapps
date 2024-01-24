@@ -6,11 +6,10 @@ metadata:
 spec:
   description: Dev Project
   sourceRepos:
-  - 'git@github.com:VikasLall/argocdappofapps.git/apps-helm-chart/dev/app2/*'
   - 'https://vikaslall.github.io/helm-chart/'
   - 'git@github.com:VikasLall/argocdappofapps.git'
   destinations:
-  - namespace: ns-1
+  - namespace: helm-app1
     server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
