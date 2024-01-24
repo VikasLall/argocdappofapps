@@ -16,7 +16,7 @@ spec:
       targetRevision: 0.1.1
       helm:
         valueFiles:
-          - $values/apps-helm-chart/app1/values.yaml
+          - $values/apps-helm-chart/dev/app1/values.yaml
     - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
       targetRevision: main
       ref: values

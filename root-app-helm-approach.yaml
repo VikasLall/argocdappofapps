@@ -19,7 +19,7 @@ spec:
     kind: Application
   project: default
   source:
-    path: apps-helm-chart/
+    path: apps-helm-chart/dev
     repoURL: git@github.com:VikasLall/argocdappofapps.git
     targetRevision: main
     directory:
