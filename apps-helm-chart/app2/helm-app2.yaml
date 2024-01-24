@@ -8,10 +8,10 @@ metadata:
 spec:
   destination:
     namespace: helm-app2
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
   project: default
   sources:
-    - chart: helm-chart
+    - chart: helm-chart-test
       repoURL: 'https://vikaslall.github.io/helm-chart/'
       targetRevision: 0.1.1
       helm:
