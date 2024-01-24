@@ -5,8 +5,8 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   labels:
-    app.kubernetes.io/name: root-app-helm-approach
-  name: root-app-helm-approach
+    app.kubernetes.io/name: root1-app-helm-approach
+  name: root1-app-helm-approach
   namespace: argocd
 spec:
   destination:
