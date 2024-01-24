@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-app1
+  name: helm-app2
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app1
+    namespace: helm-app2
     server: {{ .Values.spec.destination.server }}
   project: default
   sources:
@@ -16,7 +16,7 @@ spec:
       targetRevision: 0.1.1
       helm:
         valueFiles:
-          - $values/apps-helm-chart/apps/app1/values.yaml
+          - $values/apps-helm-chart/app2/values.yaml
     - repoURL: 'https://github.com/VikasLall/argocdappofapps.git'
       targetRevision: main
       ref: values
@@ -27,3 +27,4 @@ spec:
     syncOptions:
     - allowEmpty=true
     - CreateNamespace=true
+

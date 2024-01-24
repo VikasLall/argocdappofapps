@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-app2
+  name: helm-app1
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app2
-    server: {{ .Values.spec.destination.server }}
+    namespace: helm-app1
+    server: https://kubernetes.default.svc
   project: default
   sources:
-    - chart: helm-chart
+    - chart: helm-chart-test
       repoURL: 'https://vikaslall.github.io/helm-chart/'
       targetRevision: 0.1.1
       helm:
         valueFiles:
-          - $values/apps-helm-chart/apps/app2/values.yaml
-    - repoURL: 'https://github.com/VikasLall/argocdappofapps.git'
+          - $values/apps-helm-chart/app1/values.yaml
+    - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
       targetRevision: main
       ref: values
   syncPolicy:
@@ -27,4 +27,3 @@ spec:
     syncOptions:
     - allowEmpty=true
     - CreateNamespace=true
-

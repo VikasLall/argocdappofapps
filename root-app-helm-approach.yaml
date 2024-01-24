@@ -19,9 +19,11 @@ spec:
     kind: Application
   project: default
   source:
-    path: apps-helm-chart/apps
-    repoURL: https://github.com/mabusaa/argocd-course-app-of-apps.git
+    path: apps-helm-chart/
+    repoURL: git@github.com:VikasLall/argocdappofapps.git
     targetRevision: main
+    directory:
+      recurse: true
   syncPolicy:
     automated:
       allowEmpty: true
