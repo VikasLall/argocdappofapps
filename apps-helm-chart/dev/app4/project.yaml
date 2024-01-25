@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: dev-project
+  name: dev-project-4
   namespace: argocd
 spec:
   description: Dev Project
@@ -9,7 +9,7 @@ spec:
   - 'https://vikaslall.github.io/helm-chart/'
   - 'git@github.com:VikasLall/argocdappofapps.git'
   destinations:
-  - namespace: helm-app1
+  - namespace: helm-app4
     server: https://kubernetes.default.svc
   - namespace: '!default'
     server: 'https://kubernetes.default.svc'  
