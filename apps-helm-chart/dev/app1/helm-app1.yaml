@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  argocd.argoproj.io/sync-options: Prune=true
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
     namespace: helm-app1
