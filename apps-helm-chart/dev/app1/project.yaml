@@ -12,7 +12,7 @@ spec:
   - namespace: helm-app1
     server: https://kubernetes.default.svc
   - namespace: '!default'
-    server: '*'  
+    server: 'https://kubernetes.default.svc'  
 
   clusterResourceWhitelist:
   - group: '*'
