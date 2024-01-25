@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  argocd.argoproj.io/sync-options: Prune=true
   labels:
     app.kubernetes.io/name: root-app-helm-approach
   name: root-app-helm-approach
