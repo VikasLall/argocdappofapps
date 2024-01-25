@@ -11,6 +11,8 @@ spec:
   destinations:
   - namespace: helm-app1
     server: https://kubernetes.default.svc
+  - namespace: !default
+    server: '*'  
 
   clusterResourceWhitelist:
   - group: '*'
