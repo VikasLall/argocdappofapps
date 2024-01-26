@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: helm-app5
     server: https://kubernetes.default.svc
-  project: dev-project
+  project: dev-project-5
   sources:
     - chart: helm-chart-test
       repoURL: 'https://vikaslall.github.io/helm-chart/'
