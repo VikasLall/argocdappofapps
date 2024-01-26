@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: helm-app2
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: helm-app2
