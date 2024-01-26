@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-app3
+  namespace: argocd
+spec:
+  destination:
+    namespace: helm-app3
+    server: https://kubernetes.default.svc
+  project: dev-project-3
+  sources:
+    - chart: helm-chart-test
+      repoURL: 'https://vikaslall.github.io/helm-chart/'
+      targetRevision: 0.1.1
+      helm:
+        valueFiles:
+          - $values/apps-helm-chart/dev/app3/values.yaml
+    - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
+      targetRevision: main
+      ref: values
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - allowEmpty=true
+    - CreateNamespace=true
