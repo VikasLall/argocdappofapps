@@ -1,13 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  creationTimestamp: null
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-  annotations:
-    argocd.argoproj.io/sync-options: Prune=true
-  labels:
-    app.kubernetes.io/name: root-app-helm-approach-generators
   name: root-app-helm-approach-generators
   namespace: argocd
 spec:
@@ -19,32 +12,32 @@ spec:
       revision: main
   template:
     metadata: 
-      name: {{path.basename}}
+      name: '{{path.basename}}'
       namespace: argocd
-
-  destination:
-    namespace: '{{path.basename}}'
-    server: https://kubernetes.default.svc
-  project: default
-  sources:
-  - chart: helm-chart-test
-    repoURL: 'https://vikaslall.github.io/helm-chart/'
-    targetRevision: 0.1.1
-    helm:
-      valueFiles:
-        - $values/{{path}}/values.yaml
-  - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
-    targetRevision: main
-    ref: values
-  # source:
-  #   path: '{{path}}'
-  #   repoURL: git@github.com:VikasLall/argocdappofapps.git
-  #   targetRevision: main
-  syncPolicy:
-    automated:
-      allowEmpty: true
-      selfHeal: true
-      prune: true
-    syncOptions:
-    - allowEmpty=true
-    - CreateNamespace=true
+    spec:
+      destination:
+        namespace: '{{path.basename}}'
+        server: https://kubernetes.default.svc
+      project: default
+      sources:
+      - chart: helm-chart-test
+        repoURL: 'https://vikaslall.github.io/helm-chart/'
+        targetRevision: 0.1.1
+        helm:
+          valueFiles:
+            - $values/{{path}}/values.yaml
+      - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
+        targetRevision: main
+        ref: values
+      # source:
+      #   path: '{{path}}'
+      #   repoURL: git@github.com:VikasLall/argocdappofapps.git
+      #   targetRevision: main
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          selfHeal: true
+          prune: true
+        syncOptions:
+        - allowEmpty=true
+        - CreateNamespace=true
