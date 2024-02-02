@@ -22,7 +22,7 @@ spec:
       sources:
       - chart: helm-chart-test
         repoURL: 'https://vikaslall.github.io/helm-chart/'
-        targetRevision: {{.Values.version}}
+        targetRevision: 0.1.2
         helm:
           valueFiles:
             - $values/{{path}}/values.yaml
