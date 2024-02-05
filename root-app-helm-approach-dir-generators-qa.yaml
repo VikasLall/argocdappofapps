@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: root-app-helm-approach-generators-qa
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      directories:
+      - path: apps-helm-chart/qa/*
+      repoURL: git@github.com:VikasLall/argocdappofapps.git
+      revision: main
+  template:
+    metadata: 
+      name: '{{path.basename}}'
+      namespace: argocd
+    spec:
+      destination:
+        namespace: '{{path.basename}}'
+        server: https://kubernetes.default.svc
+      project: default
+      # sources:
+      # - chart: helm-chart-test
+      #   repoURL: 'https://vikaslall.github.io/helm-chart/'
+      #   targetRevision: 0.1.2
+      #   helm:
+      #     valueFiles:
+      #       - $values/{{path}}/values.yaml
+      # - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
+      #   targetRevision: main
+      #   ref: values
+      source:
+        path: '{{path}}'
+        repoURL: git@github.com:VikasLall/argocdappofapps.git
+        targetRevision: main
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          prune: true
+        syncOptions:
+        - allowEmpty=true
+        - CreateNamespace=true
