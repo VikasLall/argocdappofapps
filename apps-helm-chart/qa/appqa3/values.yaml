@@ -1,1 +1,2 @@
-replicaCount: 2
+helm-chart-test:
+  replicaCount: 2
