@@ -11,10 +11,10 @@ spec:
   sources:
     - chart: helm-chart-test
       repoURL: 'https://vikaslall.github.io/helm-chart/'
-      targetRevision: 0.1.1
+      targetRevision: 0.1.2
       helm:
         valueFiles:
-          - $values/apps-helm-chart/dev/app3/values.yaml
+          - $values/apps-helm-chart/prod/app3/values.yaml
     - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
       targetRevision: main
       ref: values
