@@ -1,7 +1,0 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/argoproj/argocd-example-apps
-    targetRevision: HEAD
-version: 0.1.2
