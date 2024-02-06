@@ -1,3 +1,5 @@
+
+replicaCount: 2
 mariadb:
   enabled: false
 
