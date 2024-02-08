@@ -7,9 +7,9 @@ spec:
   destination:
     namespace: helm-app3
     server: https://kubernetes.default.svc
-  project: dev-project-3
+  project: default
   sources:
-    - chart: helm-chart-test
+    - chart: helmrollout
       repoURL: 'https://vikaslall.github.io/helmchart-rollout/'
       targetRevision: 0.1.0
       helm:
