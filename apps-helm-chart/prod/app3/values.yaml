@@ -50,9 +50,10 @@ service:
   port: 80
 
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
+  enabled: true
+  className: alb
+  annotations: 
+    kubernetes.io/ingress.class: alb
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
