@@ -67,6 +67,11 @@ ingress:
           pathType: ImplementationSpecific 
         - path: /preview
           pathType: ImplementationSpecific 
+          backend:
+            service:
+              name: helm-app3-helmrollout-preview
+              port:
+                number: 80
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
