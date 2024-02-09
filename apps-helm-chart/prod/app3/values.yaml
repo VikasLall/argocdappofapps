@@ -64,7 +64,7 @@ ingress:
     - host: bluegreen.com
       paths:
         - path: /
-          pathType: ImplementationSpecific 
+          pathType: ImplementationSpecific      
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
