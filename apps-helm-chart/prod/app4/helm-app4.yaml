@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-app2
+  name: helm-app4
   namespace: argocd
   # finalizers:
   # - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app2
+    namespace: app4
     server: https://kubernetes.default.svc
   project: default
   sources:
@@ -16,7 +16,7 @@ spec:
       targetRevision: 0.1.2
       helm:
         valueFiles:
-          - $values/apps-helm-chart/prod/app2/values.yaml
+          - $values/apps-helm-chart/prod/app4/values.yaml
     - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
       targetRevision: main
       ref: values
