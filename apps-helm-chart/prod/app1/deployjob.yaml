@@ -1,6 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
+  namespace: helm-app1
   generateName: app-slack-notification-
   annotations:
     argocd.argoproj.io/hook: PostSync
