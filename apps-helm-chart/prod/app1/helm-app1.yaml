@@ -28,3 +28,18 @@ spec:
     syncOptions:
     - allowEmpty=true
     - CreateNamespace=true
+  hooks:
+    - name: post-sync-job
+      annotations:
+        argocd.argoproj.io/hook: PostSync
+        argocd.argoproj.io/hook-delete-policy: HookSucceeded
+      spec:
+        containers:
+          - name: job
+            image: curlimages/curl
+            command:
+              - "curl"
+              - "-X"
+              - "GET"
+              - "https://postsync.free.beeceptor.com"
+          restartPolicy: Never
