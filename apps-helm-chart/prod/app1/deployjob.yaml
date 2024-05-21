@@ -15,6 +15,6 @@ spec:
           - "curl"
           - "-X"
           - "GET"
-          - "curl -v -X GET 'https://postsync.free.beeceptor.com' -H 'some-header: some-value'"
+          - "https://postsync.free.beeceptor.com"
       restartPolicy: Never
   backoffLimit: 2
