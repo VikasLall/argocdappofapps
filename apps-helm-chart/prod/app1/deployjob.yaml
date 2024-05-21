@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: drupal-deploy-job
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        name: drupal-deploy
+        image: ubuntu  # Replace with your actual image that has Drush installed
+        command: ["/bin/sh", "-c"]
+        args: |
+            ls
+      restartPolicy: Never
