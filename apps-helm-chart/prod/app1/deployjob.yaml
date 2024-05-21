@@ -14,9 +14,7 @@ spec:
         command:
           - "curl"
           - "-X"
-          - "POST"
-          - "--data-urlencode"
-          - "payload={\"channel\": \"#somechannel\", \"username\": \"hello\", \"text\": \"App Sync succeeded\", \"icon_emoji\": \":ghost:\"}"
-          - "https://www.toptal.com/developers/postbin/1716261621196-3669754371512"
+          - "GET"
+          - "curl -v -X GET 'https://postsync.free.beeceptor.com' -H 'some-header: some-value'"
       restartPolicy: Never
   backoffLimit: 2
