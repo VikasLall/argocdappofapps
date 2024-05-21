@@ -9,9 +9,7 @@ spec:
   template:
     spec:
       containers:
-        name: drupal-deploy
-        image: ubuntu  # Replace with your actual image that has Drush installed
-        command: ["/bin/sh", "-c"]
-        args: |
-            ls
+        - name: example-container
+          image: ubuntu
+          command: ["echo", "Hello World"]
       restartPolicy: Never
