@@ -12,10 +12,14 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   ignoreDifferences:
-  - group: argoproj.io
+  # - group: argoproj.io
+  #   jsonPointers:
+  #   - /status
+  #   kind: Application
+  - group: apps
     jsonPointers:
-    - /status
-    kind: Application
+    - /spec/replicas
+    kind: StatefulSet    
   project: default
   source:
     path: apps-helm-chart/prod
