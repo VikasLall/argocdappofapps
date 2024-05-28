@@ -15,6 +15,8 @@ spec:
           # Add your shell commands here
           # For example, cloning a repository
           git config --global user.name "VikasLall"
+          echo "Username set "
           git clone https://github.com/VikasLall/argocdappofapps.git;
+          ls
           echo "Repository cloned";
       restartPolicy: Never
