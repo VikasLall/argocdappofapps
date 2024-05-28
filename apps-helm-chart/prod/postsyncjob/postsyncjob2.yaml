@@ -16,7 +16,7 @@ spec:
           # For example, cloning a repository
           git config --global user.name "VikasLall"
           echo "Username set "
-          git git@github.com:VikasLall/argocdappofapps.git;
+          git clone git@github.com:VikasLall/argocdappofapps.git;
           ls
           echo "Repository cloned";
       restartPolicy: Never
