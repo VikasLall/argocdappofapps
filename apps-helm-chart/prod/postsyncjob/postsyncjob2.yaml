@@ -14,6 +14,7 @@ spec:
           echo "Running a shell command inside alpine/git container";
           # Add your shell commands here
           # For example, cloning a repository
+          git config --global user.name "VikasLall"
           git clone https://github.com/VikasLall/argocdappofapps.git;
           echo "Repository cloned";
       restartPolicy: Never
