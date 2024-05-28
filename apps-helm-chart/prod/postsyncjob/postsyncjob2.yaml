@@ -22,6 +22,8 @@ spec:
           echo "Repository cloned";
 
           cd argocdappofapps
+          pwd
+          ls .git
 
           CURRENT_VERSION_FILE="./apps-helm-chart/prod/postsyncjob/current_version.txt"
 
