@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: alpine-git-shell-command-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: alpine-git-container
+        image: alpine/git
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          echo "Running a shell command inside alpine/git container";
+          # Add your shell commands here
+          # For example, cloning a repository
+          git clone https://github.com/VikasLall/argocdappofapps.git;
+          echo "Repository cloned";
+      restartPolicy: Never
