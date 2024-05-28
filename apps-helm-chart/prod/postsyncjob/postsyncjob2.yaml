@@ -20,13 +20,20 @@ spec:
           git clone https://github.com/VikasLall/argocdappofapps.git;
           ls
           echo "Repository cloned";
+
+          cd argocdappofapps
+
           CURRENT_VERSION_FILE="./apps-helm-chart/prod/postsyncjob/current_version.txt"
 
           # Fetch the latest tags from the remote repository
           git fetch --tags
 
+
           # Get the latest tag name
           LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+          echo "Latest Tag"
+          echo $LATEST_TAG
 
           # Read the currently deployed version
           CURRENT_VERSION=$(cat "$CURRENT_VERSION_FILE")
