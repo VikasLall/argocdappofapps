@@ -43,6 +43,10 @@ spec:
             # Update the currently deployed version
             echo $LATEST_TAG > "$CURRENT_VERSION_FILE"
             cat "$CURRENT_VERSION_FILE"
+            git add .
+            git commit -m " updated version by Job"
+            git push
+            echo  " Pushed changes"
 
             # Add custom logic here to handle the new version deployment
           else
