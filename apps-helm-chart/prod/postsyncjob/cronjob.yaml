@@ -1,7 +1,7 @@
 apiVersion: batch/v1
-kind: CronJobJob
+kind: CronJob
 metadata:
-  name: alpine-git-shell-command-job
+  name: alpine-git-shell-cron-job
 spec:
   schedule: "* * * * *"
   jobTemplate:
