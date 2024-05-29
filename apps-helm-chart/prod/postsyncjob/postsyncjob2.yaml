@@ -13,10 +13,7 @@ spec:
         - |
           echo "Running a shell command inside alpine/git container";
           # Add your shell commands here
-          # For example, cloning a repository
-          # git config --global user.name "VikasLall"
-          # echo "Username set "
-          # git remote set-url origin https://github.com/VikasLall/argocdappofapps.git
+
           git clone https://github.com/VikasLall/argocdappofapps.git;
           ls
           echo "Repository cloned";
@@ -45,6 +42,8 @@ spec:
             echo "A new version ($LATEST_TAG) is deployed. Current version is $CURRENT_VERSION."
             # Update the currently deployed version
             echo $LATEST_TAG > "$CURRENT_VERSION_FILE"
+            cat "$CURRENT_VERSION_FILE"
+
             # Add custom logic here to handle the new version deployment
           else
             echo "No new version deployed. Current version is $CURRENT_VERSION."
