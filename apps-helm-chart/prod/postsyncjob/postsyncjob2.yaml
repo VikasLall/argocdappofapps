@@ -43,6 +43,8 @@ spec:
             # Update the currently deployed version
             echo $LATEST_TAG > "$CURRENT_VERSION_FILE"
             cat "$CURRENT_VERSION_FILE"
+            git config --global user.email "you@example.com"
+            git config --global user.name "VikasLall"
             git add .
             git commit -m " updated version by Job"
             git push
