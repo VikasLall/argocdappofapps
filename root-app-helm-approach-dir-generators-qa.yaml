@@ -19,18 +19,8 @@ spec:
         namespace: '{{path.basename}}'
         server: https://kubernetes.default.svc
       project: default
-      # sources:
-      # - chart: helm-chart-test
-      #   repoURL: 'https://vikaslall.github.io/helm-chart/'
-      #   targetRevision: 0.1.2
-      #   helm:
-      #     valueFiles:
-      #       - $values/{{path}}/values.yaml
-      # - repoURL: 'git@github.com:VikasLall/argocdappofapps.git'
-      #   targetRevision: main
-      #   ref: values
       source:
-        path: apps-helm-chart/namespace-config
+        path: '{{path}}'
         repoURL: git@github.com:VikasLall/argocdappofapps.git
         targetRevision: main
       syncPolicy:
