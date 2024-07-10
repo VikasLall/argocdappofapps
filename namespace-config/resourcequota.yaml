@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: resource-quota
+  namespace: {{path.basename}}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  hard:
+    pods: "25"
