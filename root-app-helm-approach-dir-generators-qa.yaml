@@ -30,7 +30,7 @@ spec:
       #   targetRevision: main
       #   ref: values
       source:
-        path: namespace-config
+        path: apps-helm-chart/namespace-config
         repoURL: git@github.com:VikasLall/argocdappofapps.git
         targetRevision: main
       syncPolicy:
