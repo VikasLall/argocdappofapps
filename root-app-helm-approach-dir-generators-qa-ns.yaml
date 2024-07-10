@@ -4,6 +4,9 @@ metadata:
   name: qa-namespace-config
   namespace: argocd
 spec:
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       repoURL: https://github.com/VikasLall/argocdappofapps.git
